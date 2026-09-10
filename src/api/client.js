@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL || "/api_proxy",
+  baseURL: process.env.REACT_APP_API_BASE_URL || "https://pol.vrplay.in/frontend_api",
 });
 
 apiClient.interceptors.request.use((config) => {

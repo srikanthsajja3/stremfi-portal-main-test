@@ -1,10 +1,6 @@
 {
   "rewrites": [
     {
-      "source": "/api_proxy/:path*",
-      "destination": "https://pol.vrplay.in/frontend_api/:path*"
-    },
-    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
