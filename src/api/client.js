@@ -1,9 +1,7 @@
 import axios from "axios";
 
-const isVercel = typeof window !== "undefined" && window.location.hostname.includes("vercel.app");
-
 const apiClient = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL || (isVercel ? "/frontend_api" : "https://pol.vrplay.in/frontend_api"),
+  baseURL: process.env.REACT_APP_API_BASE_URL || "https://pol.vrplay.in/frontend_api",
 });
 
 apiClient.interceptors.request.use((config) => {
