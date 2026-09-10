@@ -1,0 +1,153 @@
+/* stremfi-portal-main/src/index.css */
+
+:root {
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Color Palette - Premium Emerald Green, Slate & Glass Light Theme */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-highlight: rgba(0, 0, 0, 0.03);
+  
+  --primary: #10b981; /* Emerald Green */
+  --primary-hover: #059669; /* Darker Green */
+  --primary-glow: rgba(16, 185, 129, 0.2);
+  
+  --accent-cyan: #059669; /* Dark Green */
+  --accent-emerald: #047857;
+  --accent-rose: #dc2626; /* Deep Red */
+  --accent-amber: #d97706; /* Deep Amber */
+  
+  --text-main: #000000; /* Pure Black Text */
+  --text-muted: #4b5563; /* Muted Slate Text */
+  --text-dim: #9ca3af; /* Light Grey Text */
+  
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 18px;
+  --border-radius-full: 9999px;
+  
+  --box-shadow-glow: 0 4px 20px rgba(16, 185, 129, 0.15);
+  --sidebar-width: 260px;
+
+  /* StremFi brand palette (aligned with stremfi copy emerald palette) */
+  --brand-primary: #10b981;
+  --brand-primary-dark: #059669;
+  --brand-primary-darker: #047857;
+  --brand-primary-light: #d1fae5;
+  --brand-secondary: #0f172a;
+  --brand-secondary-light: #1e293b;
+  --brand-accent: #10b981;
+  --brand-accent-dark: #059669;
+  --brand-bg: #ffffff;
+  --brand-surface: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(0, 0, 0, 0.01) 0px, transparent 50%);
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: var(--border-radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.06);
+  border-radius: var(--border-radius-md);
+}
+
+.glass-panel-interactive {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-md);
+  transition: var(--transition-smooth);
+}
+.glass-panel-interactive:hover {
+  border-color: rgba(16, 185, 129, 0.35);
+  box-shadow: var(--box-shadow-glow);
+  transform: translateY(-2px);
+}
+
+/* Custom Micro-Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.2); }
+  50% { box-shadow: 0 0 25px rgba(16, 185, 129, 0.45); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Styling standard HTML components with Design System tokens */
+button {
+  font-family: var(--font-family);
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+input, select, textarea {
+  font-family: var(--font-family);
+  background: #ffffff;
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+  border-radius: var(--border-radius-sm);
+  padding: 10px 14px;
+  font-size: 14px;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+  background: #ffffff;
+}

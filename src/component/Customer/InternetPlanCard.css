@@ -1,0 +1,1120 @@
+/* ============================================================
+   INTERNET PLAN CARD - Main Container
+============================================================ */
+.internet-plan-card {
+  font-family: inherit;
+  color: var(--internet-text, var(--brand-secondary));
+  margin-top: 20px;
+}
+
+.internet-plan-card,
+.internet-plan-card *,
+.mac-modal-overlay,
+.mac-modal-overlay * {
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   EMPTY STATE
+============================================================ */
+.internet-empty-state {
+  text-align: center;
+  padding: clamp(28px, 5vw, 44px) 24px;
+  background: linear-gradient(135deg, #eff6ff, #f8fafc);
+  border-radius: var(--internet-radius, 16px);
+  border: 2px dashed #bfdbfe;
+}
+
+.internet-empty-icon {
+  font-size: clamp(34px, 6vw, 46px);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.internet-empty-title {
+  font-size: clamp(15px, 3vw, 17px);
+  font-weight: 700;
+  color: var(--internet-text, var(--brand-secondary));
+  margin: 0 0 4px 0;
+}
+
+.internet-empty-subtitle {
+  font-size: 13.5px;
+  color: var(--internet-text-muted, #6b7280);
+  margin: 0 0 18px 0;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+.internet-btn-primary,
+.internet-btn-recharge,
+.internet-btn-advance,
+.internet-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: var(--internet-radius-sm, 10px);
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.internet-btn-primary {
+  padding: 11px 26px;
+  background: linear-gradient(135deg, var(--internet-primary-light, var(--brand-primary)), var(--internet-primary, var(--brand-primary)));
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.28);
+}
+
+.internet-btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.38);
+}
+
+.internet-btn-recharge {
+  padding: 10px 22px;
+  background: linear-gradient(135deg, #22c55e, var(--internet-success, #16a34a));
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.28);
+}
+
+.internet-btn-recharge:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(22, 163, 74, 0.35);
+}
+
+.internet-btn-advance {
+  padding: 10px 22px;
+  background: linear-gradient(135deg, #f59e0b, var(--internet-warning, #d97706));
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.28);
+}
+
+.internet-btn-advance:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(217, 119, 6, 0.35);
+}
+
+.internet-btn-secondary {
+  padding: 9px 18px;
+  background: #fff;
+  color: var(--internet-primary, var(--brand-primary));
+  border: 1.5px solid #dbeafe;
+}
+
+.internet-btn-secondary:hover:not(:disabled) {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  transform: translateY(-1px);
+}
+
+.internet-btn-primary:disabled,
+.internet-btn-recharge:disabled,
+.internet-btn-advance:disabled,
+.internet-btn-secondary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ============================================================
+   INTERNET TOOLBAR - Desktop (lg)
+============================================================ */
+.internet-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--internet-border, #e5e7eb);
+}
+
+.internet-toolbar button,
+.internet-toolbar .internet-select {
+  flex: 0 1 auto;
+  min-width: 140px;
+}
+
+/* ============================================================
+   INTERNET TOOLBAR - Tablet (md) 768px - 1024px
+============================================================ */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .internet-toolbar button,
+  .internet-toolbar .internet-select {
+    min-width: 130px;
+    flex: 1 1 auto;
+  }
+}
+
+/* ============================================================
+   INTERNET TOOLBAR - Mobile (sm) 480px - 768px
+   TWO BUTTONS PER ROW USING GRID
+============================================================ */
+@media (max-width: 768px) {
+  .internet-toolbar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+  }
+
+  .internet-toolbar button,
+  .internet-toolbar .internet-select {
+    min-width: 0;
+    width: 100%;
+    justify-content: center;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  /* Make the select element span full width on mobile */
+  .internet-toolbar .internet-select {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ============================================================
+   INTERNET TOOLBAR - Extra Small Mobile (xs) < 480px
+   STILL TWO BUTTONS PER ROW
+============================================================ */
+@media (max-width: 480px) {
+  .internet-toolbar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+  }
+
+  .internet-toolbar button,
+  .internet-toolbar .internet-select {
+    padding: 8px 10px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  .internet-toolbar .internet-select {
+    grid-column: 1 / -1;
+    height: 38px;
+    font-size: 12px;
+    padding: 0 10px;
+  }
+}
+
+/* ============================================================
+   INTERNET TOOLBAR - Very Small Devices (< 360px)
+============================================================ */
+@media (max-width: 359px) {
+  .internet-toolbar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+  }
+
+  .internet-toolbar button,
+  .internet-toolbar .internet-select {
+    padding: 6px 8px;
+    font-size: 11px;
+    border-radius: 6px;
+    min-height: 32px;
+  }
+
+  .internet-toolbar .internet-select {
+    height: 32px;
+    font-size: 11px;
+  }
+}
+
+/* ============================================================
+   INTERNET TOOLBAR - Landscape Mobile
+============================================================ */
+@media (max-height: 600px) and (orientation: landscape) {
+  .internet-toolbar {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .internet-toolbar button,
+  .internet-toolbar .internet-select {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .internet-toolbar .internet-select {
+    grid-column: auto;
+  }
+}
+
+/* ============================================================
+   SPINNER
+============================================================ */
+.internet-spinner-small {
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  animation: internetSpin 0.6s linear infinite;
+}
+
+@keyframes internetSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================================
+   DASHBOARD HEADER
+============================================================ */
+.internet-dashboard-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 65%);
+  border: 1px solid #dbeafe;
+  border-radius: var(--internet-radius, 16px);
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+
+.internet-dashboard-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 0;
+}
+
+.internet-big-icon {
+  width: 85px;
+  height: 90px;
+  border-radius: 20%;
+  overflow: hidden;
+  border: 4px solid #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  background: #f5f5f5;
+  flex-shrink: 0;
+}
+
+.internet-profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+}
+
+.internet-dashboard-left h2 {
+  margin: 0 0 6px 0;
+  font-size: clamp(17px, 3vw, 20px);
+  font-weight: 800;
+  color: var(--internet-text, var(--brand-secondary));
+}
+
+.internet-header-subtitle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  font-size: 15px;
+  color: var(--internet-text-muted, #6b7280);
+  line-height: 1.6;
+}
+
+.internet-header-subtitle strong {
+  color: var(--internet-text, var(--brand-secondary));
+  font-weight: 600;
+}
+
+.internet-dashboard-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   STATUS BADGE
+============================================================ */
+.internet-status-badge {
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.internet-status-badge.online {
+  background: var(--internet-success-bg, #dcfce7);
+  color: #166534;
+}
+
+.internet-status-badge.offline {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.internet-status-badge.active {
+  background: var(--internet-success-bg, #dcfce7);
+  color: #166534;
+}
+
+.internet-status-badge.warning {
+  background: var(--internet-warning-bg, #fef3c7);
+  color: #92400e;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.internet-status-badge.online .status-dot {
+  animation: pulseDot 1.5s infinite;
+}
+
+.internet-status-badge.offline .status-dot {
+  animation: none;
+}
+
+@keyframes pulseDot {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   COPY ICON
+============================================================ */
+.internet-copy {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.copy-icon {
+  cursor: pointer;
+  color: var(--brand-primary-dark);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.copy-icon:hover {
+  transform: scale(1.15);
+  color: #0d47a1;
+}
+
+/* ============================================================
+   SELECT DROPDOWN
+============================================================ */
+.internet-select {
+  min-width: 180px;
+  height: 42px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.internet-select:hover {
+  border-color: var(--brand-primary-dark);
+}
+
+.internet-select:focus {
+  outline: none;
+  border-color: var(--brand-primary-dark);
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
+}
+
+/* ============================================================
+   DASHBOARD GRID
+============================================================ */
+.internet-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.internet-dashboard-card {
+  background: #fff;
+  border: 1px solid var(--internet-border, #e5e7eb);
+  border-radius: var(--internet-radius, 16px);
+  padding: 18px 20px;
+  transition: box-shadow 0.2s ease;
+}
+
+.internet-dashboard-card:hover {
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
+
+.internet-dashboard-card h3 {
+  margin: 0 0 14px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--internet-text, var(--brand-secondary));
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.internet-detail-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 0;
+  font-size: 13px;
+}
+
+.internet-detail-row span {
+  color: var(--internet-text-muted, #6b7280);
+  flex-shrink: 0;
+}
+
+.internet-detail-row strong {
+  color: var(--internet-text, var(--brand-secondary));
+  font-weight: 600;
+  text-align: right;
+  word-break: break-word;
+}
+
+/* ============================================================
+   ADDRESS CARD
+============================================================ */
+.internet-address-card {
+  margin-bottom: 4px;
+}
+
+.internet-address-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.internet-address-grid h4 {
+  margin: 0 0 6px 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--internet-text-muted, #6b7280);
+  font-weight: 700;
+}
+
+.internet-address-grid p {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--internet-text, var(--brand-secondary));
+  line-height: 1.5;
+}
+
+/* ============================================================
+   RESPONSIVE - Tablet (md) <=1024px
+============================================================ */
+@media (max-width: 1024px) {
+  .internet-dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================================
+   RESPONSIVE - Mobile (sm) <=768px
+============================================================ */
+@media (max-width: 768px) {
+  .internet-dashboard-header {
+    flex-direction: column;
+    padding: 18px;
+  }
+
+  .internet-dashboard-right {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .internet-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .internet-address-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .internet-big-icon {
+    width: 70px;
+    height: 80px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE - Extra Small (xs) <=480px
+============================================================ */
+@media (max-width: 480px) {
+  .internet-empty-state {
+    padding: 26px 16px;
+  }
+
+  .internet-dashboard-left {
+    gap: 10px;
+  }
+
+  .internet-big-icon {
+    width: 70px;
+    height: 80px;
+  }
+
+  .internet-header-subtitle {
+    font-size: 12px;
+    gap: 2px 10px;
+  }
+
+  .internet-dashboard-card {
+    padding: 15px 16px;
+  }
+
+  .internet-detail-row {
+    font-size: 12.5px;
+  }
+}
+
+/* ============================================================
+   MODAL STYLES
+============================================================ */
+.mac-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 1000;
+  animation: macFadeIn 0.15s ease;
+}
+
+@keyframes macFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.mac-modal {
+  background: #fff;
+  width: 100%;
+  max-width: 560px;
+  max-height: 88vh;
+  overflow-y: auto;
+  border-radius: var(--internet-radius, 16px);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
+  animation: macSlideUp 0.2s ease;
+}
+
+@keyframes macSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mac-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid #eef0f3;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-radius: 16px 16px 0 0;
+  z-index: 1;
+}
+
+.mac-header h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--brand-secondary);
+}
+
+.mac-header button {
+  border: none;
+  background: #f3f4f6;
+  color: #4b5563;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+  flex-shrink: 0;
+}
+
+.mac-header button:hover {
+  background: #e5e7eb;
+}
+
+.mac-loading,
+.mac-empty {
+  padding: 48px 20px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* ============================================================
+   MAC TABLE
+============================================================ */
+.mac-table {
+  width: 95%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.mac-table thead th {
+  text-align: left;
+  padding: 10px 22px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+  font-weight: 700;
+}
+
+.mac-table tbody td {
+  padding: 12px 22px;
+  border-bottom: 1px solid #f8fafc;
+  color: #1f2937;
+  vertical-align: middle;
+}
+
+.mac-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.mac-table tbody tr:hover td {
+  background: #f9fafb;
+}
+
+.remove-btn {
+  padding: 6px 14px;
+  border: 1.5px solid var(--internet-danger-bg, #fee2e2);
+  background: var(--internet-danger-bg, #fee2e2);
+  color: var(--internet-danger, #dc2626);
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.remove-btn:hover:not(:disabled) {
+  background: #fecaca;
+}
+
+.remove-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   MODAL FORM ELEMENTS
+============================================================ */
+.mac-modal label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+.mac-modal input[type="text"],
+.mac-modal input[type="password"],
+.mac-modal input[type="number"],
+.mac-modal select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 9px;
+  font-size: 13.5px;
+  background: #fff;
+  color: var(--brand-secondary);
+  transition: border-color 0.15s ease;
+}
+
+.mac-modal input:focus,
+.mac-modal select:focus {
+  outline: none;
+  border-color: var(--internet-primary, var(--brand-primary));
+}
+
+.mac-modal hr {
+  border: none;
+  border-top: 1px solid #f1f5f9;
+  margin: 18px 0;
+}
+
+.mac-modal > div > button:not([class]) {
+  padding: 10px 20px;
+  border-radius: 9px;
+  border: 1.5px solid #e5e7eb;
+  background: #fff;
+  color: #374151;
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+}
+
+.mac-modal > div > button:not([class]):hover {
+  background: #f9fafb;
+}
+
+/* ============================================================
+   MODAL ACTION ROW (Cancel / Confirm buttons)
+   Use className="mac-modal-actions" on the wrapping div instead of
+   inline flex styles, so this can actually respond to screen size —
+   an inline `style={{display:"flex", ...}}` can't take a media query.
+============================================================ */
+.mac-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+@media (max-width: 480px) {
+  .mac-modal-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .mac-modal-actions button {
+    width: 100%;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE - MODAL MOBILE
+============================================================ */
+@media (max-width: 768px) {
+  .mac-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  .mac-table thead,
+  .mac-table tbody {
+    display: table;
+    width: 100%;
+    min-width: 480px;
+  }
+
+  .mac-modal {
+    max-height: 92vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .mac-modal-overlay {
+    padding: 12px;
+  }
+
+  .mac-modal {
+    max-width: 100%;
+    max-height: 90vh;
+  }
+
+  .mac-header {
+    padding: 14px 16px;
+  }
+
+  .mac-header h2 {
+    font-size: 15.5px;
+  }
+}
+
+/* ============================================================
+   SESSION HISTORY MODAL
+============================================================ */
+.session-toolbar {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.session-toolbar > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.session-toolbar label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 12.5px;
+  color: #374151;
+}
+
+.session-toolbar input {
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13.5px;
+}
+
+.session-toolbar button {
+  height: 40px;
+}
+
+/* Table wrapper enables horizontal scroll at every width — the table
+   itself always stays a real <table>, never converts to cards. */
+.session-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid #eef0f3;
+  border-radius: 10px;
+}
+
+.session-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  table-layout: auto;
+  /* Mobile Chrome/Samsung Internet can silently "boost" text size inside
+     narrow columns to keep it legible — since header and body cells
+     don't get boosted by exactly the same amount, columns drift out of
+     sync with each other, which is what produced the interleaved/
+     overlapping text in the screenshot even though the layout math
+     itself was correct. This turns that behavior off for the table. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+.session-table th {
+  background: var(--brand-primary-dark);
+  color: white;
+  padding: 12px;
+  white-space: nowrap !important;
+  text-align: left;
+  font-size: 12.5px;
+}
+
+.session-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+  /* !important here is deliberate: this is the exact property that kept
+     getting silently overridden, and .session-table td is already about
+     as specific a selector as this component needs — there's nothing
+     else in the app that should legitimately win against it. */
+  white-space: nowrap !important;
+  font-size: 13px;
+}
+
+.session-table tbody tr:hover {
+  background: #f5f8ff;
+}
+
+.session-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.session-card {
+  background: #fff;
+  border: 1px solid #eef0f3;
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  min-width: 0; /* lets the number shrink/ellipsize instead of forcing the grid track wider */
+}
+
+.session-card small {
+  color: #777;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.session-card h2 {
+  margin: 10px 0 0 0;
+  color: var(--brand-primary-dark);
+  font-size: clamp(16px, 4vw, 22px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.details-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 13.5px;
+  word-break: break-word;
+}
+
+.details-table td:first-child {
+  font-weight: 600;
+  width: 180px;
+  background: #fafafa;
+}
+
+/* ---- Tablet (md) ---- */
+@media (max-width: 1024px) {
+  .session-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---- Mobile (sm) ---- */
+@media (max-width: 768px) {
+  .session-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .session-toolbar > div,
+  .session-toolbar input,
+  .session-toolbar button {
+    width: 100%;
+  }
+
+  .session-summary {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .session-card {
+    padding: 14px;
+  }
+
+  .details-table td:first-child {
+    width: 130px;
+  }
+
+  /* Keep it a real table on every device — make the horizontal scroll
+     itself reliable instead. The earlier overlap was two rules fighting:
+     header cells forced nowrap while body cells could still wrap, so
+     columns drifted out of alignment. With td matching th (below) and a
+     dedicated scroll container, this renders correctly; no need to give
+     up the table layout for it. */
+  .session-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    /* Keeps the swipe from being captured by the modal's vertical
+       scroll instead of this table's horizontal one. */
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
+    /* Subtle edge fade so it's visually obvious there's more to the
+       right — otherwise a table that starts exactly at the modal's
+       edge doesn't read as "scrollable" on a phone. */
+    background:
+      linear-gradient(to right, #fff 30%, rgba(255, 255, 255, 0)),
+      linear-gradient(to left, #fff 30%, rgba(255, 255, 255, 0)) right,
+      linear-gradient(to right, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0)),
+      linear-gradient(to left, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0)) right;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-size: 24px 100%, 24px 100%, 8px 100%, 8px 100%;
+    background-attachment: local, local, scroll, scroll;
+  }
+
+  .session-table {
+    min-width: 780px;
+  }
+
+  .session-table th,
+  .session-table td {
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+}
+
+/* ---- Extra small (xs) ---- */
+@media (max-width: 480px) {
+  .session-summary {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .session-card {
+    padding: 12px;
+  }
+
+  .session-card small {
+    font-size: 10.5px;
+  }
+
+  .details-table td {
+    padding: 10px;
+    font-size: 12.5px;
+  }
+
+  .details-table td:first-child {
+    width: 110px;
+  }
+
+  .session-table {
+    min-width: 680px;
+  }
+
+  .session-table th,
+  .session-table td {
+    padding: 8px;
+    font-size: 11.5px;
+  }
+}

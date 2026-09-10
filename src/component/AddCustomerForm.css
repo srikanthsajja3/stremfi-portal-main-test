@@ -1,0 +1,1598 @@
+/* AddOperatorForm.css */
+
+/* Variables */
+:root {
+  --primary-color: var(--brand-primary);
+  --primary-dark: var(--brand-primary-dark);
+  --error-color: #ef233c;
+  --success-color: #4cc9f0;
+  --text-color: #2b2d42;
+  --light-gray: #edf2f4;
+  --white: #ffffff;
+  --border-color: #ced4da;
+  --disabled-bg: #f5f5f5;
+  --transition: all 0.3s ease;
+}
+
+/* Form Container */
+.form-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-container-error {
+  box-shadow: 0 4px 20px rgba(243, 14, 14, 0.39);
+}
+.form-container h2 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Form Elements */
+.form-container input,
+.form-container select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: var(--transition);
+  background-color: var(--light-gray);
+}
+
+.oper-code {
+  color: var(--text-color);
+}
+
+.form-container input:focus,
+.form-container select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+}
+
+.form-container input::placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+
+/* Read-only Input */
+.form-container input[readonly] {
+  background-color: var(--disabled-bg);
+  cursor: not-allowed;
+}
+
+/* Select Dropdown */
+.form-container select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+}
+
+/* Button Styles */
+.add-cancel {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.add-cancel button {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.add-cancel button:first-child {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.add-cancel button:first-child:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .form-container h2 {
+    font-size: 1.5rem;
+  }
+  
+  .add-cancel {
+    flex-direction: column;
+  }
+  
+  .add-cancel button {
+    width: 100%;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-container {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Focus styles for accessibility */
+.form-container input:focus-visible,
+.form-container select:focus-visible,
+.add-cancel button:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+
+
+/* Change Password Container */
+.change-password-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+/* Change Password Form */
+.change-password {
+  max-width: 450px;
+  width: 90%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.change-password h2 {
+  color: var(--brand-secondary);
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Input Fields */
+.change-password input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+}
+
+.change-password input:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+  background-color: white;
+}
+
+.change-password input::placeholder {
+  color: #a0aec0;
+}
+
+/* Button Container */
+.add-cancel {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Buttons */
+.change-password button {
+  flex: 1;
+  padding: 0.875rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.change-password button:first-child {
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 100%);
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.change-password button:first-child:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.2);
+}
+
+.change-password button:first-child:disabled {
+  background: #cbd5e0;
+  transform: none;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.cancel-btn {
+  background: #f76c6c;
+  color: #ffffff;
+}
+
+.cancel-btn:hover {
+  background: #f84343;
+}
+
+/* Password Strength Indicator */
+.password-strength {
+  height: 4px;
+  background: #e2e8f0;
+  border-radius: 2px;
+  margin: -0.75rem 0 1rem;
+  overflow: hidden;
+}
+
+.password-strength-bar {
+  height: 100%;
+  width: 0%;
+  background: #48bb78;
+  transition: width 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .change-password {
+    padding: 1.5rem;
+  }
+  
+  .add-cancel {
+    flex-direction: column;
+  }
+  
+  .change-password button {
+    width: 100%;
+  }
+}
+
+.password-input-wrapper {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.password-toggle-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  font-size: 1.1rem;
+}
+
+.password-toggle-icon:hover {
+  color: #4a5568;
+}
+
+/* Adjust input padding to make room for the icon */
+.change-password input {
+  padding-right: 40px; /* Add this to your existing input styles */
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.error-input {
+  border: 1px solid red !important;
+  background-color: #ffe6e6;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+
+/* Toast Mobile Optimization */
+.toast-mobile-optimized .Toastify__toast {
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.toast-mobile-optimized .Toastify__toast-container {
+  width: 100%;
+  max-width: 400px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 480px) {
+  .toast-mobile-optimized .Toastify__toast {
+    margin: 5px;
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  .form-container input,
+  .form-container select,
+  .add-cancel button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+/* ==================== INTERNET PHONE-LOOKUP GATE ==================== */
+
+.internet-check-box {
+  background: linear-gradient(135deg, #eff6ff, #f8fafc);
+  border: 2px dashed #bfdbfe;
+  border-radius: 14px;
+  padding: 18px;
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.internet-check-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand-secondary);
+}
+
+.internet-check-btn {
+  align-self: flex-start;
+  padding: 10px 22px;
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-primary));
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.internet-check-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.internet-check-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.internet-check-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 13.5px;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.internet-check-banner.found {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.internet-check-banner.not-found {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+.internet-check-link {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  color: inherit;
+  padding: 0;
+}
+
+/* =========================================================
+   INTERNET CUSTOMER FORM
+   ========================================================= */
+
+.internet-customer-form {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e7eaf0;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FORM ELEMENTS
+   ========================================================= */
+
+.internet-customer-form input,
+.internet-customer-form select,
+.internet-customer-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d9dee8;
+  border-radius: 10px;
+  background: #fff;
+  color: #1f2937;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.internet-customer-form input,
+.internet-customer-form select {
+  height: 48px;
+  padding: 0 14px;
+}
+
+.internet-customer-form textarea {
+  padding: 12px 14px;
+  min-height: 90px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+.internet-customer-form input:focus,
+.internet-customer-form select:focus,
+.internet-customer-form textarea:focus {
+  border-color: var(--brand-primary-dark);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+   ========================================================= */
+
+.internet-customer-form input::placeholder,
+.internet-customer-form textarea::placeholder {
+  color: #9ca3af;
+}
+
+
+/* =========================================================
+   READ ONLY
+   ========================================================= */
+
+.internet-customer-form input:read-only,
+.internet-customer-form textarea:read-only {
+  background: #f7f8fb;
+  color: #4b5563;
+  cursor: default;
+}
+
+
+/* =========================================================
+   DISABLED
+   ========================================================= */
+
+.internet-customer-form input:disabled,
+.internet-customer-form select:disabled,
+.internet-customer-form textarea:disabled {
+  background: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   FORM GRID
+   ========================================================= */
+
+.internet-customer-form .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.internet-customer-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.internet-customer-form .form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.internet-customer-form .form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.internet-customer-form .form-section {
+  margin-bottom: 26px;
+}
+
+.internet-customer-form .form-section:last-child {
+  margin-bottom: 0;
+}
+
+.internet-customer-form .section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  color: var(--brand-secondary);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.internet-customer-form .section-title::before {
+  content: "";
+  width: 4px;
+  height: 22px;
+  border-radius: 4px;
+  background: linear-gradient(
+    180deg,
+    var(--brand-primary-dark),
+    var(--brand-primary-dark)
+  );
+}
+
+
+/* =========================================================
+   STEP HEADER
+   ========================================================= */
+
+.internet-customer-form .step-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.internet-customer-form .step-number {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--brand-primary-dark),
+    var(--brand-primary-dark)
+  );
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 5px 14px rgba(99, 102, 241, 0.25);
+}
+
+.internet-customer-form .step-info h3 {
+  margin: 0;
+  color: var(--brand-secondary);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.internet-customer-form .step-info p {
+  margin: 4px 0 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   PACKAGE / SUB PLAN
+   ========================================================= */
+
+.internet-customer-form .plan-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.internet-customer-form .select-wrapper {
+  position: relative;
+}
+
+.internet-customer-form .select-wrapper select {
+  appearance: none;
+  padding-right: 42px;
+}
+
+.internet-customer-form .select-wrapper::after {
+  content: "⌄";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-55%);
+  color: #6b7280;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   PACKAGE PRICE
+   ========================================================= */
+
+.internet-customer-form .plan-price {
+  color: var(--brand-primary-dark);
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   INFO MESSAGE
+   ========================================================= */
+
+.internet-customer-form .form-hint {
+  margin: 8px 0 0;
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.internet-customer-form .empty-message {
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   AADHAAR VERIFY BUTTON
+   ========================================================= */
+
+.internet-customer-form .aadhaar-btn {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 22px;
+  border: 0;
+  border-radius: 11px;
+  background: linear-gradient(
+    135deg,
+    var(--brand-primary-dark),
+    var(--brand-primary-darker)
+  );
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+  box-shadow: 0 7px 18px rgba(79, 70, 229, 0.25);
+}
+
+.internet-customer-form .aadhaar-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(79, 70, 229, 0.32);
+}
+
+.internet-customer-form .aadhaar-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.internet-customer-form .aadhaar-btn:disabled {
+  background: #d1d5db;
+  color: #6b7280;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   AADHAAR VERIFIED PANEL
+   ========================================================= */
+
+.internet-customer-form .aadhaar-verified {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 15px 17px;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  background: #f0fdf4;
+  color: #166534;
+}
+
+.internet-customer-form .aadhaar-verified-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #22c55e;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.internet-customer-form .aadhaar-verified-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.internet-customer-form .aadhaar-verified-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.internet-customer-form .aadhaar-verified-number {
+  font-size: 12px;
+  color: #15803d;
+}
+
+
+/* =========================================================
+   AADHAAR CUSTOMER DETAILS
+   ========================================================= */
+
+.internet-customer-form .aadhaar-details {
+  padding: 20px;
+  margin-bottom: 22px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #fafafa;
+}
+
+
+/* =========================================================
+   ADDRESS LABEL
+   ========================================================= */
+
+.internet-customer-form .address-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   BUTTON GROUP
+   ========================================================= */
+
+.internet-customer-form .add-cancel {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+
+/* =========================================================
+   ADD CUSTOMER BUTTON
+   ========================================================= */
+
+.internet-customer-form .add-customer-btn {
+  min-width: 210px;
+  height: 48px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(
+    135deg,
+    #16a34a,
+    #15803d
+  );
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(22, 163, 74, 0.22);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.internet-customer-form .add-customer-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 9px 20px rgba(22, 163, 74, 0.3);
+}
+
+.internet-customer-form .add-customer-btn:disabled {
+  background: #d1d5db;
+  color: #6b7280;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   CANCEL BUTTON
+   ========================================================= */
+
+.internet-customer-form .cancel-btn {
+  height: 48px;
+  padding: 0 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.internet-customer-form .cancel-btn:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.internet-customer-form .loading-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.internet-customer-form .form-error {
+  margin-top: 8px;
+  color: #dc2626;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .internet-customer-form {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .internet-customer-form .form-grid,
+  .internet-customer-form .plan-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .internet-customer-form .form-group.full-width {
+    grid-column: auto;
+  }
+
+  .internet-customer-form .add-cancel {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .internet-customer-form .add-customer-btn,
+  .internet-customer-form .cancel-btn {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .internet-customer-form {
+    padding: 16px;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .internet-customer-form .step-header {
+    margin-bottom: 20px;
+  }
+
+  .internet-customer-form .step-number {
+    width: 34px;
+    height: 34px;
+  }
+
+  .internet-customer-form .step-info h3 {
+    font-size: 16px;
+  }
+
+  .internet-customer-form input,
+  .internet-customer-form select {
+    height: 46px;
+  }
+}
+
+/* =========================================================
+   CUSTOMER TYPE SELECTION
+   ========================================================= */
+
+.customer-type-selection {
+  margin: 22px 0;
+  padding: 24px;
+  border: 1px solid #e0e7ff;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    #f8faff 0%,
+    #ffffff 100%
+  );
+  box-shadow: 0 5px 18px rgba(67, 97, 238, 0.08);
+  text-align: center;
+}
+
+
+/* Title */
+
+.customer-type-title {
+  margin: 0 0 7px;
+  color: var(--brand-secondary);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+/* Description */
+
+.customer-type-description {
+  margin: 0 0 20px;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   CUSTOMER TYPE BUTTONS
+   ========================================================= */
+
+.customer-type-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+
+/* Common button */
+
+.customer-type-btn {
+  min-height: 58px;
+  padding: 12px 18px;
+
+  border-radius: 12px;
+  border: 1px solid transparent;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+
+/* =========================================================
+   INTERNET CUSTOMER BUTTON
+   ========================================================= */
+
+.internet-customer-btn {
+  background: linear-gradient(
+    135deg,
+    var(--brand-primary-dark),
+    var(--brand-primary-darker)
+  );
+
+  color: #ffffff;
+
+  border-color: var(--brand-primary-dark);
+
+  box-shadow:
+    0 6px 16px rgba(79, 70, 229, 0.25);
+}
+
+.internet-customer-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 22px rgba(79, 70, 229, 0.32);
+}
+
+.internet-customer-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   NORMAL CUSTOMER BUTTON
+   ========================================================= */
+
+.normal-customer-btn {
+  background: #ffffff;
+
+  color: #374151;
+
+  border-color: #d1d5db;
+
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+.normal-customer-btn:hover {
+  transform: translateY(-2px);
+
+  background: #f8fafc;
+
+  border-color: #94a3b8;
+
+  box-shadow:
+    0 8px 18px rgba(15, 23, 42, 0.10);
+}
+
+.normal-customer-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / FOCUS
+   ========================================================= */
+
+.customer-type-btn:focus-visible {
+  outline: 3px solid rgba(67, 97, 238, 0.25);
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   NORMAL CUSTOMER ADD / CANCEL BUTTONS
+   ========================================================= */
+
+/*
+   Your normal customer "Add Customer" button currently
+   doesn't have a class, so this targets the first button
+   inside .add-cancel.
+*/
+
+.form-container .add-cancel > button:first-child {
+  background: linear-gradient(
+    135deg,
+    var(--brand-primary),
+    var(--brand-primary-dark)
+  );
+
+  color: #ffffff;
+
+  border: none;
+
+  min-height: 48px;
+
+  box-shadow:
+    0 6px 16px rgba(67, 97, 238, 0.22);
+
+  font-weight: 700;
+}
+
+.form-container .add-cancel > button:first-child:hover {
+  background: linear-gradient(
+    135deg,
+    var(--brand-primary-dark),
+    #304dcc
+  );
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 20px rgba(67, 97, 238, 0.30);
+}
+
+.form-container .add-cancel > button:first-child:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   CANCEL BUTTON - ADD CUSTOMER FORM
+   ========================================================= */
+
+.form-container .cancel-btn {
+  background: #ffffff;
+
+  color: #475569;
+
+  border: 1px solid #cbd5e1;
+
+  min-height: 48px;
+
+  font-weight: 600;
+}
+
+.form-container .cancel-btn:hover {
+  background: #f8fafc;
+
+  color: var(--brand-secondary);
+
+  border-color: #94a3b8;
+
+  transform: translateY(-1px);
+}
+
+.form-container .cancel-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   CHANGE CUSTOMER TYPE BUTTON
+   ========================================================= */
+
+.form-container .cancel-btn {
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* =========================================================
+   INTERNET CUSTOMER SECTION
+   ========================================================= */
+
+.internet-customer-section {
+  width: 100%;
+  margin-top: 20px;
+}
+
+
+/* =========================================================
+   ERROR INPUT
+   ========================================================= */
+
+.form-container .error-input {
+  border-color: #ef4444 !important;
+
+  background-color: #fff7f7;
+
+  box-shadow:
+    0 0 0 2px rgba(239, 68, 68, 0.08);
+}
+
+.form-container .error-input:focus {
+  border-color: #dc2626 !important;
+
+  box-shadow:
+    0 0 0 3px rgba(239, 68, 68, 0.12);
+}
+
+
+/* =========================================================
+   ERROR TEXT
+   ========================================================= */
+
+.form-container .error-text {
+  margin: -7px 0 10px;
+
+  color: #dc2626;
+
+  font-size: 12px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   LOADING STATE
+   ========================================================= */
+
+.dashboard-loading {
+  min-height: 250px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  color: #64748b;
+}
+
+.dashboard-loading p {
+  margin: 0;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   LOADER
+   ========================================================= */
+
+.dashboard-loading .loader {
+  width: 38px;
+  height: 38px;
+
+  border: 4px solid #e5e7eb;
+
+  border-top-color: var(--brand-primary);
+
+  border-radius: 50%;
+
+  animation: customerFormSpin 0.8s linear infinite;
+}
+
+@keyframes customerFormSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.change-btn {
+  padding: 5px;
+  border-radius: 12px;
+  border: 1px solid red;
+  background-color: transparent;
+  color: red;
+}
+
+/* =========================================================
+   GENERAL ERROR
+   ========================================================= */
+
+.form-container + .error,
+.error {
+  margin: 20px auto;
+
+  max-width: 600px;
+
+  padding: 14px 16px;
+
+  border-radius: 10px;
+
+  background: #fef2f2;
+
+  border: 1px solid #fecaca;
+
+  color: #b91c1c;
+
+  font-size: 14px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .customer-type-selection {
+    padding: 20px 16px;
+  }
+
+  .customer-type-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-type-btn {
+    width: 100%;
+  }
+
+  .internet-customer-section {
+    margin-top: 15px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .customer-type-selection {
+    margin: 16px 0;
+    padding: 18px 14px;
+
+    border-radius: 12px;
+  }
+
+  .customer-type-title {
+    font-size: 15px;
+  }
+
+  .customer-type-description {
+    font-size: 12px;
+  }
+
+  .customer-type-btn {
+    min-height: 52px;
+
+    font-size: 13px;
+
+    padding: 10px 14px;
+  }
+
+}
+
+.password-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-input-wrapper input {
+  width: 100%;
+  padding-right: 45px;
+  box-sizing: border-box;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  font-size: 18px;
+  padding: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-toggle-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* =========================================================
+   DIGILOCKER WAITING BOX
+   ========================================================= */
+
+.digilocker-waiting-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 30px 20px;
+  margin-top: 22px;
+  border: 2px dashed var(--brand-primary-dark);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+  min-height: 160px;
+  text-align: center;
+}
+
+.digilocker-waiting-box p {
+  margin: 0;
+  color: #5b21b6;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+  max-width: 350px;
+}
+
+/* =========================================================
+   DIGILOCKER SPINNER
+   ========================================================= */
+
+.digilocker-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid var(--brand-primary-darker);
+  border-right: 4px solid var(--brand-primary-darker);
+  border-radius: 50%;
+  animation: digilockerSpin 0.9s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes digilockerSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   DIGILOCKER CANCEL BUTTON
+   ========================================================= */
+
+.digilocker-waiting-box .cancle-btn {
+  min-width: 180px;
+  padding: 10px 24px;
+  border: 2px solid #ef4444;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #ef4444;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 4px;
+}
+
+.digilocker-waiting-box .cancle-btn:hover {
+  background: #ef4444;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.digilocker-waiting-box .cancle-btn:active {
+  transform: translateY(0);
+}
+
+.digilocker-waiting-box .cancle-btn:focus-visible {
+  outline: 3px solid rgba(239, 68, 68, 0.3);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .digilocker-waiting-box {
+    padding: 24px 16px;
+    min-height: 140px;
+  }
+
+  .digilocker-waiting-box p {
+    font-size: 14px;
+  }
+
+  .digilocker-spinner {
+    width: 40px;
+    height: 40px;
+    border-width: 3px;
+  }
+
+  .digilocker-waiting-box .cancle-btn {
+    min-width: 150px;
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .digilocker-waiting-box {
+    padding: 20px 14px;
+    min-height: 120px;
+    gap: 12px;
+  }
+
+  .digilocker-waiting-box p {
+    font-size: 13px;
+  }
+
+  .digilocker-spinner {
+    width: 36px;
+    height: 36px;
+    border-width: 3px;
+  }
+
+  .digilocker-waiting-box .cancle-btn {
+    min-width: 130px;
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+/* ScoreMe / KYC-provider-picker additions to InternetCustomerForm */
+.kyc-provider-picker,
+.scoreme-otp-box {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 14px;
+  margin: 10px 0;
+  background: #f8fafc;
+}
+
+.scoreme-otp-box label {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #475569;
+}

@@ -1,0 +1,130 @@
+/* Container Header Layout */
+.internet-list-container{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+}
+
+.internet-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.internet-list-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+/* Common Button Styles */
+.refresh-btn,
+.refresh-btn-mobile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--brand-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.refresh-btn:hover,
+.refresh-btn-mobile:hover {
+  background-color: #1d4ed8;
+}
+
+.refresh-btn:active,
+.refresh-btn-mobile:active {
+  transform: scale(0.97);
+}
+
+/* Desktop Refresh Button */
+.refresh-btn {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+/* Mobile Refresh Icon Button */
+.refresh-btn-mobile {
+  display: none; /* Hidden by default on desktop */
+  padding: 8px;
+  font-size: 1.25rem;
+}
+
+/* Search Input Styling */
+.internet-search {
+  width: 50%;
+  align-self: flex-end;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  color: #374151;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.internet-search::placeholder {
+  color: #9ca3af;
+}
+
+.internet-search:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Responsive Styles for Mobile Screens */
+@media (max-width: 640px) {
+  .refresh-btn {
+    display: none; /* Hide text button on mobile */
+  }
+
+  .refresh-btn-mobile {
+    display: inline-flex; /* Show icon button on mobile */
+  }
+}
+
+.internet-link{
+    color:var(--brand-primary);
+    cursor:pointer;
+    font-weight:600;
+}
+
+.internet-link:hover{
+    text-decoration:underline;
+}
+
+.status_badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.status-badge.active {
+    padding: 4px 14px;
+    border-radius: 14px;
+    font-size: 0.85rem;
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge.inactive {
+    padding: 4px 14px;
+    border-radius: 14px;
+    font-size: 0.85rem;
+    background-color: #fee2e2;
+    color: #991b1b;
+}

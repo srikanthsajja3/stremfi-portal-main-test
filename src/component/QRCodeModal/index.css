@@ -1,0 +1,360 @@
+/* QR Modal Overlay */
+.qr-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+/* QR Modal */
+.qr-modal {
+  background: white;
+  border-radius: 12px;
+  padding: 0;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header */
+.qr-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e1e5e9;
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 100%);
+  border-radius: 12px 12px 0 0;
+  color: white;
+}
+
+.qr-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.qr-title h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.title-icon {
+  font-size: 1.3rem;
+}
+
+.qr-close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.1rem;
+}
+
+.qr-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+/* Payment Methods */
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 20px 0;
+  font-size: 1.2rem;
+  color: var(--brand-secondary);
+  font-weight: 600;
+}
+
+.section-icon {
+  color: var(--brand-primary);
+}
+
+/* UPI ID Container */
+.upi-id-container {
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+}
+
+.upi-id-label {
+  font-size: 0.9rem;
+  color: #718096;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.upi-id-value {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.upi-id-value code {
+  background: #edf2f7;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  color: var(--brand-secondary);
+  font-size: 0.95rem;
+}
+
+.copy-upi-btn {
+  background: var(--brand-primary);
+  border: none;
+  border-radius: 6px;
+  padding: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copy-upi-btn:hover {
+  background: #5a6fd8;
+}
+
+/* QR Code Container */
+.qr-code-container {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.qr-code-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+/* Text Content */
+.instruction-text {
+  text-align: center;
+  color: #718096;
+  font-size: 0.9rem;
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+}
+
+.info-text {
+  text-align: center;
+  color: #a0aec0;
+  font-size: 0.85rem;
+  margin: 16px 0 0 0;
+  line-height: 1.4;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.primary-btn, .secondary-btn {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.primary-btn {
+  background: var(--brand-primary);
+  color: white;
+}
+
+.primary-btn:hover {
+  background: #5a6fd8;
+  transform: translateY(-1px);
+}
+
+.secondary-btn {
+  background: #edf2f7;
+  color: #4a5568;
+  border: 1px solid #e2e8f0;
+}
+
+.secondary-btn:hover {
+  background: #e2e8f0;
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .qr-modal {
+    width: 95%;
+    margin: 20px;
+  }
+  
+  .payment-methods {
+    padding: 20px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .qr-code-image {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+/* Focus styles for accessibility */
+.qr-close-btn:focus,
+.copy-upi-btn:focus,
+.primary-btn:focus,
+.secondary-btn:focus {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+/* Simple pulse with scale */
+.info-text.simple-pulse {
+  color: #e53e3e;
+  font-weight: 600;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background-color: rgba(229, 62, 62, 0.1);
+  border: 2px solid #e53e3e;
+  animation: simplePulse 2s ease-in-out infinite;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+@keyframes simplePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(229, 62, 62, 0.4);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 8px rgba(229, 62, 62, 0);
+  }
+}
+
+.info-text.simple-pulse:hover {
+  transform: scale(1.05);
+  background-color: rgba(229, 62, 62, 0.15);
+}
+
+.upi-id-text {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+upi-id-text-ybl {
+  font-weight: 600;
+  color: var(--brand-primary) !important;
+}
+
+.online-payment-box{
+    margin-top:20px;
+    text-align:center;
+}
+
+.divider{
+    margin:15px 0;
+    font-weight:600;
+    color:#777;
+}
+
+.amount-input{
+    width:80%;
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:16px;
+}
+
+
+.pay-now-btn{
+    margin-top:12px;
+    width:80%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#6739b7;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.pay-now-btn:hover{
+    opacity:.9;
+}
+
+.quick-amounts{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    margin-top:12px;
+}
+
+.amount-chip{
+    padding:8px 14px;
+    border-radius:20px;
+    border:1px solid #6739b7;
+    background:white;
+    cursor:pointer;
+}
+
+.amount-chip:hover{
+    background:#6739b7;
+    color:white;
+}

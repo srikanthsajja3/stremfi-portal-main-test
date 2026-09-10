@@ -1,0 +1,73 @@
+.kyc-mapping-container {
+  max-width: 700px;
+  margin: 24px auto;
+  padding: 0 20px;
+}
+
+.kyc-mapping-container h1 {
+  color: var(--brand-secondary);
+  margin-bottom: 4px;
+}
+
+.kyc-mapping-subtitle {
+  color: #64748b;
+  font-size: 0.88rem;
+  margin-bottom: 20px;
+}
+
+.kyc-provider-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kyc-provider-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 14px 16px;
+  cursor: pointer;
+  background: #fff;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.kyc-provider-row.selected {
+  border-color: var(--brand-primary);
+  background: #eff6ff;
+}
+
+.kyc-provider-row input[type="checkbox"] {
+  margin-top: 3px;
+}
+
+.kyc-provider-label {
+  font-weight: 700;
+  color: var(--brand-secondary);
+}
+
+.kyc-provider-description {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.kyc-mapping-actions {
+  margin-top: 20px;
+}
+
+.kyc-mapping-actions .save-btn {
+  background: var(--brand-secondary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.kyc-mapping-actions .save-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

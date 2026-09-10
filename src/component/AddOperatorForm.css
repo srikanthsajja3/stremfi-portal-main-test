@@ -1,0 +1,755 @@
+/* AddOperatorForm.css */
+
+/* Variables */
+:root {
+  --primary-color: var(--brand-primary);
+  --primary-dark: var(--brand-primary-dark);
+  --error-color: #ef233c;
+  --success-color: #4cc9f0;
+  --text-color: #2b2d42;
+  --light-gray: #edf2f4;
+  --white: #ffffff;
+  --border-color: #ced4da;
+  --disabled-bg: #f5f5f5;
+  --transition: all 0.3s ease;
+}
+
+/* Form Container */
+.form-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-container-error {
+  box-shadow: 0 4px 20px rgba(243, 14, 14, 0.39);
+}
+.form-container h2 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Form Elements */
+.form-container input,
+.form-container select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: var(--transition);
+  background-color: var(--light-gray);
+}
+
+.oper-code {
+  color: var(--text-color);
+}
+
+.form-container input:focus,
+.form-container select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+}
+
+.form-container input::placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+
+/* Read-only Input */
+.form-container input[readonly] {
+  background-color: var(--disabled-bg);
+  cursor: not-allowed;
+}
+
+/* Select Dropdown */
+.form-container select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+}
+
+/* Button Styles */
+.add-cancel {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.add-cancel button {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.add-cancel button:first-child {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.add-cancel button:first-child:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .form-container h2 {
+    font-size: 1.5rem;
+  }
+  
+  .add-cancel {
+    flex-direction: column;
+  }
+  
+  .add-cancel button {
+    width: 100%;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-container {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Focus styles for accessibility */
+.form-container input:focus-visible,
+.form-container select:focus-visible,
+.add-cancel button:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+
+
+/* Change Password Container */
+.change-password-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+/* Change Password Form */
+.change-password {
+  max-width: 450px;
+  width: 90%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.change-password h2 {
+  color: var(--brand-secondary);
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Input Fields */
+.change-password input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+}
+
+.change-password input:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+  background-color: white;
+}
+
+.change-password input::placeholder {
+  color: #a0aec0;
+}
+
+/* Button Container */
+.add-cancel {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Buttons */
+.change-password button {
+  flex: 1;
+  padding: 0.875rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.change-password button:first-child {
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 100%);
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.change-password button:first-child:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.2);
+}
+
+.change-password button:first-child:disabled {
+  background: #cbd5e0;
+  transform: none;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.cancel-btn {
+  background: #f76c6c;
+  color: #ffffff;
+}
+
+.cancel-btn:hover {
+  background: #f84343;
+}
+
+/* Password Strength Indicator */
+.password-strength {
+  height: 4px;
+  background: #e2e8f0;
+  border-radius: 2px;
+  margin: -0.75rem 0 1rem;
+  overflow: hidden;
+}
+
+.password-strength-bar {
+  height: 100%;
+  width: 0%;
+  background: #48bb78;
+  transition: width 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .change-password {
+    padding: 1.5rem;
+  }
+  
+  .add-cancel {
+    flex-direction: column;
+  }
+  
+  .change-password button {
+    width: 100%;
+  }
+}
+
+.password-input-wrapper {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.password-toggle-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  font-size: 1.1rem;
+}
+
+.password-toggle-icon:hover {
+  color: #4a5568;
+}
+
+/* Adjust input padding to make room for the icon */
+.change-password input {
+  padding-right: 40px; /* Add this to your existing input styles */
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.error-input {
+  border: 1px solid red !important;
+  background-color: #ffe6e6;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+
+/* Toast Mobile Optimization */
+.toast-mobile-optimized .Toastify__toast {
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.toast-mobile-optimized .Toastify__toast-container {
+  width: 100%;
+  max-width: 400px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 480px) {
+  .toast-mobile-optimized .Toastify__toast {
+    margin: 5px;
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  .form-container input,
+  .form-container select,
+  .add-cancel button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Phone Input Container */
+.phone-input-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.phone-input {
+  flex: 1;
+}
+
+/* OTTPlay Check Button */
+.ottplay-check-btn {
+  padding: 10px 16px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  height: 40px; /* Match input height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ottplay-check-btn:hover:not(:disabled) {
+  background-color: #357ae8;
+  transform: translateY(-1px);
+}
+
+.ottplay-check-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.ottplay-check-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.ottplay-check-btn.checking {
+  background-color: #ff9800;
+}
+
+.ottplay-check-btn.valid {
+  background-color: #4caf50;
+}
+
+.ottplay-check-btn.invalid {
+  background-color: #f44336;
+}
+
+/* Input Status Classes */
+.valid-input {
+  border-color: #4caf50 !important;
+  background-color: rgba(76, 175, 80, 0.05);
+  box-shadow: 0 0 0 1px rgba(76, 175, 80, 0.2);
+}
+
+.error-input {
+  border-color: #f44336 !important;
+  background-color: rgba(244, 67, 54, 0.05);
+}
+
+.checking-input {
+  border-color: #ff9800 !important;
+  background-color: rgba(255, 152, 0, 0.05);
+}
+
+/* Validation Status */
+.validation-status {
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.validation-status.valid {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: #2e7d32;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.validation-status.invalid {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #c62828;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.validation-status.checking {
+  background-color: rgba(255, 152, 0, 0.1);
+  color: #ef6c00;
+  border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+.status-icon {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Spinner Animation */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.validation-status .spinner {
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  width: 20px;
+  height: 20px;
+}
+
+/* API Error Text */
+.api-error-text {
+  color: #f44336;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  background-color: rgba(244, 67, 54, 0.05);
+  border-radius: 4px;
+  border-left: 3px solid #f44336;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .phone-input-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .ottplay-check-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .validation-status {
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+  }
+}
+
+/* Toggle Switch Container */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 0 1rem 0;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.toggle-container:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Toggle Label */
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1e1c1c;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Hide default checkbox */
+.toggle-label input[type="checkbox"] {
+  display: none;
+}
+
+/* Toggle Switch - Custom */
+.toggle-switch {
+  position: relative;
+  width: 50px;
+  height: 26px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 13px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 1px solid rgba(70, 69, 69, 0.726);
+}
+
+/* Toggle Slider */
+.toggle-slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: #351ee3;
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Toggle Active State */
+.toggle-label input[type="checkbox"]:checked + .toggle-switch {
+  background: rgba(67, 97, 238, 0.8);
+  border-color: rgba(67, 97, 238, 0.5);
+}
+
+.toggle-label input[type="checkbox"]:checked + .toggle-switch .toggle-slider {
+  transform: translateX(24px);
+  background: #ffffff;
+}
+
+/* Toggle Hover Effect */
+.toggle-label:hover .toggle-switch {
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(67, 97, 238, 0.2);
+}
+
+/* Toggle Focus State */
+.toggle-label input[type="checkbox"]:focus-visible + .toggle-switch {
+  outline: 2px solid rgba(67, 97, 238, 0.6);
+  outline-offset: 2px;
+}
+
+/* Toggle Disabled State */
+.toggle-label input[type="checkbox"]:disabled + .toggle-switch {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.toggle-label input[type="checkbox"]:disabled + .toggle-switch .toggle-slider {
+  background: #cccccc;
+}
+
+/* Toggle Active Glow Effect */
+.toggle-label input[type="checkbox"]:checked + .toggle-switch {
+  box-shadow: 0 0 20px rgba(67, 97, 238, 0.3);
+}
+
+/* Toggle Text */
+.toggle-text {
+  flex: 1;
+}
+
+/* Internet Section with Toggle */
+.internet-section {
+  margin: 1rem 0;
+  padding: 1rem 1rem 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid rgba(67, 97, 238, 0.6);
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+
+.internet-section label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #090909;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+  opacity: 0.8;
+}
+
+.internet-section input {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #0c0c0c;
+}
+
+.internet-section input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.internet-section input:focus {
+  border-color: rgba(67, 97, 238, 0.6);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.internet-section .internet-fields {
+  margin-top: 0.5rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Slide Down Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design for Toggle */
+@media (max-width: 768px) {
+  .toggle-container {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .toggle-label {
+    font-size: 0.9rem;
+  }
+
+  .toggle-switch {
+    width: 44px;
+    height: 24px;
+  }
+
+  .toggle-slider {
+    width: 18px;
+    height: 18px;
+  }
+
+  .toggle-label input[type="checkbox"]:checked + .toggle-switch .toggle-slider {
+    transform: translateX(20px);
+  }
+
+  .internet-section {
+    padding: 0.75rem;
+  }
+}
+
+/* Dark Mode Adjustments */
+@media (prefers-color-scheme: dark) {
+  .toggle-switch {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .internet-section {
+    background: rgba(255, 255, 255, 0.03);
+  }
+}
+
+/* Toggle Active Pulse Animation */
+@keyframes togglePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(67, 97, 238, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(67, 97, 238, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(67, 97, 238, 0);
+  }
+}
+
+.toggle-label input[type="checkbox"]:checked + .toggle-switch {
+  animation: togglePulse 0.5s ease-out;
+}
+/* Inline live-lookup feedback (Pioneer IPTV phone-number check, etc.) */
+.field-hint {
+  margin: -8px 0 12px;
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+.field-hint-success {
+  color: var(--brand-primary-dark, #1f6e2a);
+  font-weight: 600;
+}
+
+.field-hint-error {
+  color: #b91c1c;
+}

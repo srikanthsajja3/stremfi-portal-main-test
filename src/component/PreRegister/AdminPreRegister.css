@@ -1,0 +1,37 @@
+.admin-page{
+ padding:30px;
+ color:rgb(0, 0, 0);
+ background:#ffffff;
+ min-height:100vh;
+}
+
+.thumb{
+ width:50px;
+ cursor:pointer;
+ border-radius:6px;
+}
+
+.activate-btn{
+ padding:6px 14px;
+ border:none;
+ border-radius:15px;
+ background:#22c55e;
+ color:white;
+ cursor:pointer;
+}
+
+.img-overlay{
+ position:fixed;
+ inset:0;
+ background:rgba(0,0,0,.8);
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ z-index:999;
+}
+
+.full-img{
+ max-width:90%;
+ max-height:90%;
+ border-radius:10px;
+}
